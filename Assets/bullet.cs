@@ -6,12 +6,13 @@ public class bullet : MonoBehaviour
 {
 
     Rigidbody rb;
+    public GameObject firePoint;
     public int throwForce;
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.forward * throwForce);
+        rb.AddForce(firePoint.transform.forward * throwForce);
     }
 
     
