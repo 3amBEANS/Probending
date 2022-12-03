@@ -14,6 +14,7 @@ public class PlayerCam : MonoBehaviour
 
     //rotating character model as well
     public Transform modelRotation;
+    public Transform firePointRotation;
 
     private void Start()
     {
@@ -36,5 +37,6 @@ public class PlayerCam : MonoBehaviour
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
         modelRotation.rotation = Quaternion.Euler(0, yRotation , 0);
+        firePointRotation.rotation = Quaternion.Euler(xRotation, yRotation, 0);
     }
 }

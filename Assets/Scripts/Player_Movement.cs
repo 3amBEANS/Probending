@@ -29,12 +29,15 @@ public class Player_Movement : MonoBehaviour
 
     Vector3 moveDirection;
 
+    
+
     Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
         rb.freezeRotation = true;
+      
     }
 
     private void Update()
@@ -80,12 +83,16 @@ public class Player_Movement : MonoBehaviour
         //calculate moveDirection
         moveDirection = orientation.forward * verticalInput + orientation.right * horizontalInput;
 
-        //on ground
+        //on ground and running
         if(grounded)
         {
+            rb.AddForce(moveDirection.normalized * moveSpeed * 20f, ForceMode.Force);
+        }
+        //on ground and walking
+        else if (grounded)
+        {
             rb.AddForce(moveDirection.normalized * moveSpeed * 10f, ForceMode.Force);
-        }             
-
+        }
         //in air
         else if (!grounded)
         {
