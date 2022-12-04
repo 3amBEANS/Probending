@@ -43,7 +43,7 @@ public class animationStateController : MonoBehaviour
         }
 
         //if player is running and stops running or stops walking
-        if (isRunning && !forwardPressed && !runPressed)
+        if (isRunning && forwardPressed && !runPressed)
         {
             animator.SetBool(isRunningHash, false);
         }
