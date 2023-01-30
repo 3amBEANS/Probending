@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -161,7 +161,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68674705}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.20432639, y: 1.32, z: 0.132}
+  m_LocalPosition: {x: 0.20432639, y: 1.32, z: 0.224}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -266,11 +266,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 182365413}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &331705371 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7339946277664806936, guid: 1f9c642509a8dad4bbb7b90caaec1fbd, type: 3}
-  m_PrefabInstance: {fileID: 7339946277375587331}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &537572383
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,7 +503,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sBullet: {fileID: 4229002016198164840, guid: 1380a7a46dcaed049b2d47f17ae5467c, type: 3}
-  firepoint: {fileID: 331705371}
+  firepoint: {fileID: 1524117410}
+  camPos: {fileID: 1001698037}
+  bulletSpeed: 4
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0

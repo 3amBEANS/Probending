@@ -4,16 +4,17 @@ using UnityEngine;
 
 public class attack : MonoBehaviour
 {
-
+    
     public GameObject sBullet;
-
-    public GameObject firepoint;
+    public Transform firepoint;
+    public Transform camPos;
+    public int bulletSpeed = 27;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+      
     }
 
     // Update is called once per frame
@@ -21,11 +22,23 @@ public class attack : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
+            GameObject bullet = Instantiate(sBullet);
 
-            Instantiate(sBullet, firepoint.transform.position, firepoint.transform.rotation);
+            //Physics.IgnoreCollision(bullet.GetComponent<Collider>(), firepoint.parent.GetComponent<Collider>());
+
+            bullet.transform.position = firepoint.position;
+
+            Vector3 rotation = bullet.transform.rotation.eulerAngles;
+
+            bullet.transform.rotation = Quaternion.Euler(rotation.x, transform.eulerAngles.y, rotation.z);
+
+            bullet.GetComponent<Rigidbody>().AddForce(firepoint.forward * bulletSpeed, ForceMode.Impulse);
+        }
+        else if (Input.GetButtonDown("Fire2"))
+        {
 
         }
     }
-
+    
 
 }
