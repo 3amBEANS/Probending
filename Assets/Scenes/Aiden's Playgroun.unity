@@ -503,9 +503,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sBullet: {fileID: 4229002016198164840, guid: 1380a7a46dcaed049b2d47f17ae5467c, type: 3}
+  cBullet: {fileID: 3073836195047399463, guid: 1efca54256af44d4e83dab9c717a7f62, type: 3}
   firepoint: {fileID: 1524117410}
+  recXPos: 0
+  recYPos: 0
+  recZPos: 0
   camPos: {fileID: 1001698037}
-  bulletSpeed: 4
+  bulletSpeed: 27
+  playerCam: {fileID: 963194228}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
