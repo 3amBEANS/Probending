@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
 {
-        public float sensX;
+   
+    public float sensX;
     public float sensY;
 
     public Transform orientation;
 
     float xRotation;
     float yRotation;
+
 
     //rotating character model as well
     public Transform modelRotation;
@@ -38,5 +40,8 @@ public class PlayerCam : MonoBehaviour
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
         modelRotation.rotation = Quaternion.Euler(0, yRotation , 0);
         firePointRotation.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+
+        
+
     }
 }
