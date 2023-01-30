@@ -41,7 +41,7 @@ public class animationStateController : MonoBehaviour
         }
 
 
-        animator.SetFloat(velocityHash, velocity);
+        //animator.SetFloat(velocityHash, velocity);
 
     }
 }
