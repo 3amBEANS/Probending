@@ -1397,6 +1397,11 @@ MonoBehaviour:
   orientation: {fileID: 2115810240}
   modelRotation: {fileID: 749573557}
   firePointRotation: {fileID: 1524117410}
+--- !u!4 &968817283 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7021014693780275094, guid: ba855ed4667ed2e4aa8a874dd8868394, type: 3}
+  m_PrefabInstance: {fileID: 749573556}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1001698036
 GameObject:
   m_ObjectHideFlags: 0
