@@ -31,6 +31,7 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         //if player presses forward, increase velocity in z direction
         if (forwardPressed && velocityZ < currentMaxVelocity)
         {
+            
             velocityZ += Time.deltaTime * acceleration;
         }
         //increase velocity in the left direction
