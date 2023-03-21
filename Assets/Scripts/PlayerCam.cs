@@ -10,8 +10,9 @@ public class PlayerCam : MonoBehaviour
 
     public Transform orientation;
 
-    float xRotation;
-    float yRotation;
+    //default of floats is zero?
+    public float xRotation = 0.0f;
+    public float yRotation = 0.0f;
 
 
     //rotating character model as well
@@ -43,5 +44,10 @@ public class PlayerCam : MonoBehaviour
 
         
 
+    }
+
+    public float getXRotation()
+    {
+        return xRotation;
     }
 }

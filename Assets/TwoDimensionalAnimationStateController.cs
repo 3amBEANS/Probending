@@ -11,10 +11,20 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     public float deacceleration = 2.0f;
     public float maximumWalkVelocity = 0.5f;
     public float maximumRunVelocity = 2.0f;
+    float mouseX = 0.0f;
+    float mouseY = 0.0f;
+
+    //Get xRotation and yRotation of mouse
+    public float xRotation = 0.0f;
+    public float yRotation = 0.0f;
+    public float sensX;
+    public float sensY;
 
     //maximize Performance
     int VelocityZHash;
     int VelocityXHash;
+    int MouseXHash;
+    int MouseYHash;
 
     // Start is called before the first frame update
     void Start()
@@ -23,11 +33,15 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         animator = GetComponent<Animator>();
         VelocityZHash = Animator.StringToHash("Velocity Z");
         VelocityXHash = Animator.StringToHash("Velocity X");
+        MouseXHash = Animator.StringToHash("Mouse X");
+        MouseYHash = Animator.StringToHash("Mouse Y");
+
     }
 
     //handles acceleration and deceleration
     void changeVelocity(bool forwardPressed, bool leftPressed, bool rightPressed, bool runPressed, float currentMaxVelocity)
     {
+ 
         //if player presses forward, increase velocity in z direction
         if (forwardPressed && velocityZ < currentMaxVelocity)
         {
@@ -144,6 +158,23 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //get mouse rotaiton
+        mouseX = Input.GetAxisRaw("Mouse X") * Time.deltaTime * sensX;
+        mouseY = Input.GetAxisRaw("Mouse Y") * Time.deltaTime * sensY;
+
+        if(yRotation < 1f)
+        {
+            yRotation += mouseX;
+        }
+        else if(yRotation > 1f)
+        {
+            yRotation = 1f;
+        }
+        
+        xRotation -= mouseY;
+
+
         //input will be true if the player is pressing on the passed in key parameter.
         //get key input from the player.
         bool forwardPressed = Input.GetKey(KeyCode.W);
@@ -155,12 +186,21 @@ public class TwoDimensionalAnimationStateController : MonoBehaviour
         float currentMaxVelocity = runPressed ? maximumRunVelocity : maximumWalkVelocity;
 
 
+
+        //handles the camera movement and the subsequent player upper torso animation based on where the character is looking
+        Debug.Log("X Rotation is: " + xRotation);
+        Debug.Log("Y Rotation is: " + yRotation);
+
         //handle changes in velocity
         changeVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
         lockOrResetVelocity(forwardPressed, leftPressed, rightPressed, runPressed, currentMaxVelocity);
 
+
         // set the parameters to our local variable values
         animator.SetFloat(VelocityZHash, velocityZ);
         animator.SetFloat(VelocityXHash, velocityX);
+        animator.SetFloat(MouseXHash, yRotation);
     }
+
+    
 }
