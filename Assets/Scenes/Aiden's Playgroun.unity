@@ -939,6 +939,8 @@ MonoBehaviour:
   sensX: 400
   sensY: 400
   orientation: {fileID: 2115810240}
+  xRotation: 0
+  yRotation: 0
   modelRotation: {fileID: 1409306620}
   firePointRotation: {fileID: 1524117410}
 --- !u!1 &1001698036
@@ -1095,6 +1097,10 @@ MonoBehaviour:
   deacceleration: 2
   maximumWalkVelocity: 0.5
   maximumRunVelocity: 2
+  xRotation: 0
+  yRotation: 0
+  sensX: 5
+  sensY: 1
 --- !u!114 &1409306622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1447,27 +1453,6 @@ Transform:
   m_Father: {fileID: 658750282}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2121216392 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 320b1c2af77554f99a1658df4a6d3d5c, type: 3}
-  m_PrefabInstance: {fileID: 115890400}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &2121216395
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2121216392}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38f6d40a9389f194d9af46bdc458751c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  acceleration: 2
-  deacceleration: 2
-  maximumWalkVelocity: 0.5
-  maximumRunVelocity: 2
 --- !u!1001 &7339946277375587331
 PrefabInstance:
   m_ObjectHideFlags: 0
